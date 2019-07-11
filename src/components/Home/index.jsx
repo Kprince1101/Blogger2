@@ -36,7 +36,7 @@ class Home extends React.Component {
           <div className="col-12 col-lg-6 offset-lg-3">
             {cards.map(card => {
               return (
-                <div className="card my-3">
+                <div className="card my-3" kye={Math.random()}>
                   <div className="card-header">{card.title}</div>
                   <div className="card-body">
                     {card.body}

@@ -1,5 +1,6 @@
 import { bindActionCreators } from "redux";
 
+// Most of this is just adapted boilerplate reducer examples from https://redux.js.org/basics/reducers
 export default (state = { cards: [] }, action) => {
   switch (action.type) {
     case "HOME_PAGE_LOADED":
@@ -12,9 +13,9 @@ export default (state = { cards: [] }, action) => {
         cards: [
           ...state,
           {
-            title: action.title,
-            author: action.author,
-            body: action.body
+            title: state.cards.title,
+            body: state.cards.body,
+            author: state.cards.author
           }
         ]
       });

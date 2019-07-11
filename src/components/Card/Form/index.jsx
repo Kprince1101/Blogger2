@@ -33,7 +33,7 @@ class Form extends React.Component {
       onEdit(cardToEdit)
       this.setState({ title: "", body: "", author: "" })
     } else {
-        onSubmit()
+        onSubmit(this.state)
         this.setState({ title: "", body: "", author: "" })
     }
   }
