@@ -9,16 +9,16 @@ export default (state = { cards: [] }, action) => {
         cards: action.data.cards
       };
     case "SUBMIT_CARD":
-      return Object.assign({}, state, {
+      return {
         cards: [
           ...state,
           {
-            title: state.cards.title,
-            body: state.cards.body,
-            author: state.cards.author
+            title: action.data.title,
+            body: action.data.body,
+            author: action.data.author
           }
         ]
-      });
+      };
     case "DELETE_CARD":
       return {
         ...state,
