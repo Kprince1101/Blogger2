@@ -1,3 +1,5 @@
+import { bindActionCreators } from "redux";
+
 export default (state = { cards: [] }, action) => {
   switch (action.type) {
     case "HOME_PAGE_LOADED":
@@ -6,10 +8,16 @@ export default (state = { cards: [] }, action) => {
         cards: action.data.cards
       };
     case "SUBMIT_CARD":
-      return {
-        ...state,
-        cards: [action.data.card].concat(state.cards)
-      };
+      return Object.assign({}, state, {
+        cards: [
+          ...state,
+          {
+            title: action.title,
+            author: action.author,
+            body: action.body
+          }
+        ]
+      });
     case "DELETE_CARD":
       return {
         ...state,

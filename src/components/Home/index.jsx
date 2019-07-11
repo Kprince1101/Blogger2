@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import moment, { now } from "moment";
 import { connect } from "react-redux";
 import { Form } from "../Card";
 
@@ -11,10 +11,6 @@ class Home extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
   }
 
-  componentDidMount() {
-    const { onLoad } = this.props;
-  }
-
   handleDelete(id) {
     const { onDelete } = this.props;
     onDelete(id);
@@ -22,7 +18,6 @@ class Home extends React.Component {
 
   handleEdit(card) {
     const { setEdit } = this.props;
-
     setEdit(card);
   }
 
@@ -47,7 +42,7 @@ class Home extends React.Component {
                     {card.body}
                     <p className="mt-5 text-muted">
                       <b>{card.author}</b>{" "}
-                      {moment(new Date(card.createdAt)).fromNow()}
+                      {}
                     </p>
                   </div>
                   <div className="card-footer">

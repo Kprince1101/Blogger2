@@ -29,11 +29,11 @@ class Form extends React.Component {
     const { onSubmit, cardToEdit, onEdit } = this.props;
     const { title, body, author } = this.state;
 
-    if (!cardToEdit) {
-      //onSubmit()
-        this.setState({ title: "", body: "", author: "" })
+    if (cardToEdit) {
+      onEdit(cardToEdit)
+      this.setState({ title: "", body: "", author: "" })
     } else {
-      //onEdit()
+        onSubmit()
         this.setState({ title: "", body: "", author: "" })
     }
   }
