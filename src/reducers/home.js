@@ -1,5 +1,3 @@
-import { bindActionCreators } from "redux";
-
 // Most of this is just adapted boilerplate reducer examples from https://redux.js.org/basics/reducers
 export default (state = { cards: [] }, action) => {
   switch (action.type) {
